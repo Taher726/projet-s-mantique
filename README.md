@@ -1,1 +1,1 @@
-# projet-s-mantique
+# projet-semantique
