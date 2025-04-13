@@ -58,3 +58,16 @@ Ce domaine est idéal pour une modélisation sémantique car :
 | **faitPartieDuModule**  | Cours          | Module         | Un cours appartient à un module               |
 | **appartientADiplome**  | Module         | Diplome        | Un module appartient à un diplôme             |
 | **offreDiplome**        | Etablissement  | Diplome        | Un établissement offre un diplôme             |
+
+## Phase 3 : Interrogation avec SPARQL
+
+### Requête 1 : Lister tous les étudiants
+
+```sparql
+SELECT ?etudiant ?nomEtudiant ?cours ?nomCours
+WHERE {
+  ?etudiant a ex:Etudiant ;
+            rdfs:label ?nomEtudiant ;
+            ex:suitCours ?cours .
+  ?cours rdfs:label ?nomCours .
+}
