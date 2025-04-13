@@ -122,3 +122,6 @@ WHERE {
 ```
 
 **Signification** : Liste les diplômes proposés par chaque établissement.
+
+---
+
