@@ -25,3 +25,36 @@ Ce domaine est idéal pour une modélisation sémantique car :
 | **Matière**            | Sujet ou thème d’un cours (ex : Math, Informatique)      |
 | **Niveau**             | Cycle de formation (Licence, Master, Doctorat)           |
 | **Document pédagogique** | Support de cours, devoir, polycopié                    |
+
+## 🔧 Phase 2 : Modélisation en RDF/RDFS et OWL
+
+### 🔹 Justification des **namespaces**
+
+| Namespace      | URI                                              | Usage                                       |
+|----------------|--------------------------------------------------|---------------------------------------------|
+| **rdf**        | http://www.w3.org/1999/02/22-rdf-syntax-ns#      | Syntaxe RDF                                 |
+| **rdfs**       | http://www.w3.org/2000/01/rdf-schema#            | Définition de classes et propriétés         |
+| **owl**        | http://www.w3.org/2002/07/owl#                   | Langage d’ontologie OWL                     |
+| **xsd**        | http://www.w3.org/2001/XMLSchema#                | Types de données                            |
+| **ex**         | http://www.example.org/edu#                      | Namespace propre au projet                  |
+
+### 🔹 Description des classes
+
+| Classe           | Description                                    |
+|------------------|------------------------------------------------|
+| **Etudiant**     | Représente un étudiant                         |
+| **Enseignant**   | Représente un enseignant                       |
+| **Cours**        | Représente un cours                            |
+| **Module**       | Représente un ensemble de cours                |
+| **Diplome**      | Représente un diplôme attribué                 |
+| **Etablissement**| Représente une université ou école             |
+
+### 🔹 Propriétés et relations
+
+| Propriété               | Domaine        | Portée         | Description                                   |
+|-------------------------|----------------|----------------|-----------------------------------------------|
+| **suitCours**           | Etudiant       | Cours          | Un étudiant suit un cours                     |
+| **enseigneCours**       | Enseignant     | Cours          | Un enseignant enseigne un cours               |
+| **faitPartieDuModule**  | Cours          | Module         | Un cours appartient à un module               |
+| **appartientADiplome**  | Module         | Diplome        | Un module appartient à un diplôme             |
+| **offreDiplome**        | Etablissement  | Diplome        | Un établissement offre un diplôme             |
