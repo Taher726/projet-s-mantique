@@ -92,3 +92,33 @@ WHERE {
 **Signification** : Affiche tous les enseignants avec leurs noms ainsi que les cours qu’ils dispensent.
 
 ---
+
+### Requête 3 : Lister les modules et les cours qui en font partie
+
+```sparql
+SELECT ?nomModule ?nomCours
+WHERE {
+  ?cours a ex:Cours ;
+         rdfs:label ?nomCours ;
+         ex:faitPartieDuModule ?module .
+  ?module rdfs:label ?nomModule .
+}
+```
+
+**Signification** : Permet de voir la structure pédagogique : quels cours font partie de quels modules.
+
+---
+
+### Requête 4 : Trouver les diplômes offerts par un établissement
+
+```sparql
+SELECT ?nomEtablissement ?nomDiplome
+WHERE {
+  ?etablissement a ex:Etablissement ;
+                 rdfs:label ?nomEtablissement ;
+                 ex:offreDiplome ?diplome .
+  ?diplome rdfs:label ?nomDiplome .
+}
+```
+
+**Signification** : Liste les diplômes proposés par chaque établissement.
