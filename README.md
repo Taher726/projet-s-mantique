@@ -127,4 +127,15 @@ WHERE {
 
 ## Captures d'ecran
 
+**Ontology**
 ![Exemple](Captures/Ontology.png)
+
+**Vue des classes**
+![Exemple](Captures/Vue_des_classes.png).
+
+**Propiétés objet**
+![Exemple](Captures/Propiétés_objet.png).
+
+**Individus**
+![Exemple](Captures/Individus.png).
+
