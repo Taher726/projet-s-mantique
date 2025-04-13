@@ -64,7 +64,7 @@ Ce domaine est idéal pour une modélisation sémantique car :
 ### Requête 1 : Lister tous les étudiants
 
 ```sparql
-SELECT ?etudiant ?nomEtudiant ?cours ?nomCours
+SELECT ?nomEtudiant ?nomCours
 WHERE {
   ?etudiant a ex:Etudiant ;
             rdfs:label ?nomEtudiant ;
@@ -72,4 +72,4 @@ WHERE {
   ?cours rdfs:label ?nomCours .
 }```
 
-Cette requête permet de lister tous les étudiants ainsi que les cours qu’ils suivent, en affichant leurs noms.
+**Signification** : Cette requête permet de lister tous les étudiants ainsi que les cours qu’ils suivent, en affichant leurs noms.
