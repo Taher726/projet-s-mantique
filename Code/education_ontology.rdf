@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:ex="http://www.example.org/edu#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+  <!-- Ontologie -->
+  <owl:Ontology rdf:about="http://www.example.org/edu"/>
+
+  <!-- Classes -->
+  <owl:Class rdf:about="http://www.example.org/edu#Etudiant"/>
+  <owl:Class rdf:about="http://www.example.org/edu#Enseignant"/>
+  <owl:Class rdf:about="http://www.example.org/edu#Cours"/>
+  <owl:Class rdf:about="http://www.example.org/edu#Module"/>
+  <owl:Class rdf:about="http://www.example.org/edu#Diplome"/>
+  <owl:Class rdf:about="http://www.example.org/edu#Etablissement"/>
+
+  <!-- Propriétés -->
+  <owl:ObjectProperty rdf:about="http://www.example.org/edu#suitCours">
+    <rdfs:domain rdf:resource="http://www.example.org/edu#Etudiant"/>
+    <rdfs:range rdf:resource="http://www.example.org/edu#Cours"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.example.org/edu#enseigneCours">
+    <rdfs:domain rdf:resource="http://www.example.org/edu#Enseignant"/>
+    <rdfs:range rdf:resource="http://www.example.org/edu#Cours"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.example.org/edu#faitPartieDuModule">
+    <rdfs:domain rdf:resource="http://www.example.org/edu#Cours"/>
+    <rdfs:range rdf:resource="http://www.example.org/edu#Module"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.example.org/edu#appartientADiplome">
+    <rdfs:domain rdf:resource="http://www.example.org/edu#Module"/>
+    <rdfs:range rdf:resource="http://www.example.org/edu#Diplome"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="http://www.example.org/edu#offreDiplome">
+    <rdfs:domain rdf:resource="http://www.example.org/edu#Etablissement"/>
+    <rdfs:range rdf:resource="http://www.example.org/edu#Diplome"/>
+  </owl:ObjectProperty>
+
+  <!-- Instances -->
+
+  <!-- Etudiants -->
+  <rdf:Description rdf:about="http://www.example.org/edu#Etudiant1">
+    <rdf:type rdf:resource="http://www.example.org/edu#Etudiant"/>
+    <rdfs:label>Jean Dupont</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/edu#Etudiant2">
+    <rdf:type rdf:resource="http://www.example.org/edu#Etudiant"/>
+    <rdfs:label>Marie Martin</rdfs:label>
+  </rdf:Description>
+
+  <!-- Enseignants -->
+  <rdf:Description rdf:about="http://www.example.org/edu#Enseignant1">
+    <rdf:type rdf:resource="http://www.example.org/edu#Enseignant"/>
+    <rdfs:label>Dr. Sophie Dubois</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/edu#Enseignant2">
+    <rdf:type rdf:resource="http://www.example.org/edu#Enseignant"/>
+    <rdfs:label>Prof. Alain Lefevre</rdfs:label>
+  </rdf:Description>
+
+  <!-- Cours -->
+  <rdf:Description rdf:about="http://www.example.org/edu#Cours1">
+    <rdf:type rdf:resource="http://www.example.org/edu#Cours"/>
+    <rdfs:label>Mathématiques Avancées</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/edu#Cours2">
+    <rdf:type rdf:resource="http://www.example.org/edu#Cours"/>
+    <rdfs:label>Physique Quantique</rdfs:label>
+  </rdf:Description>
+
+  <!-- Modules -->
+  <rdf:Description rdf:about="http://www.example.org/edu#Module1">
+    <rdf:type rdf:resource="http://www.example.org/edu#Module"/>
+    <rdfs:label>Mathématiques 1</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/edu#Module2">
+    <rdf:type rdf:resource="http://www.example.org/edu#Module"/>
+    <rdfs:label>Physique 1</rdfs:label>
+  </rdf:Description>
+
+  <!-- Diplômes -->
+  <rdf:Description rdf:about="http://www.example.org/edu#Diplome1">
+    <rdf:type rdf:resource="http://www.example.org/edu#Diplome"/>
+    <rdfs:label>Master en Mathématiques</rdfs:label>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/edu#Diplome2">
+    <rdf:type rdf:resource="http://www.example.org/edu#Diplome"/>
+    <rdfs:label>Master en Physique</rdfs:label>
+  </rdf:Description>
+
+  <!-- Etablissement -->
+  <rdf:Description rdf:about="http://www.example.org/edu#Etablissement1">
+    <rdf:type rdf:resource="http://www.example.org/edu#Etablissement"/>
+    <rdfs:label>Université de Paris</rdfs:label>
+  </rdf:Description>
+
+  <!-- Relations -->
+
+  <!-- Etudiant suit Cours -->
+  <rdf:Description rdf:about="http://www.example.org/edu#Etudiant1">
+    <ex:suitCours rdf:resource="http://www.example.org/edu#Cours1"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/edu#Etudiant2">
+    <ex:suitCours rdf:resource="http://www.example.org/edu#Cours2"/>
+  </rdf:Description>
+
+  <!-- Enseignant enseigne Cours -->
+  <rdf:Description rdf:about="http://www.example.org/edu#Enseignant1">
+    <ex:enseigneCours rdf:resource="http://www.example.org/edu#Cours1"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/edu#Enseignant2">
+    <ex:enseigneCours rdf:resource="http://www.example.org/edu#Cours2"/>
+  </rdf:Description>
+
+  <!-- Cours fait partie du Module -->
+  <rdf:Description rdf:about="http://www.example.org/edu#Cours1">
+    <ex:faitPartieDuModule rdf:resource="http://www.example.org/edu#Module1"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/edu#Cours2">
+    <ex:faitPartieDuModule rdf:resource="http://www.example.org/edu#Module2"/>
+  </rdf:Description>
+
+  <!-- Module appartient à un Diplome -->
+  <rdf:Description rdf:about="http://www.example.org/edu#Module1">
+    <ex:appartientADiplome rdf:resource="http://www.example.org/edu#Diplome1"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://www.example.org/edu#Module2">
+    <ex:appartientADiplome rdf:resource="http://www.example.org/edu#Diplome2"/>
+  </rdf:Description>
+
+  <!-- Etablissement offre Diplome -->
+  <rdf:Description rdf:about="http://www.example.org/edu#Etablissement1">
+    <ex:offreDiplome rdf:resource="http://www.example.org/edu#Diplome1"/>
+    <ex:offreDiplome rdf:resource="http://www.example.org/edu#Diplome2"/>
+  </rdf:Description>
+
+</rdf:RDF>
