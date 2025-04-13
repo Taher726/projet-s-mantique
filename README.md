@@ -61,15 +61,21 @@ Ce domaine est idéal pour une modélisation sémantique car :
 
 ## Phase 3 : Interrogation avec SPARQL
 
-### Requête 1 : Lister tous les étudiants
+### 🔎 Requête 2 : Trouver les enseignants et les cours qu’ils enseignent
 
 ```sparql
-SELECT ?nomEtudiant ?nomCours
-WHERE {
-  ?etudiant a ex:Etudiant ;
-            rdfs:label ?nomEtudiant ;
-            ex:suitCours ?cours .
-  ?cours rdfs:label ?nomCours .
-}```
+PREFIX ex: <http://www.example.org/edu#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-**Signification** : Cette requête permet de lister tous les étudiants ainsi que les cours qu’ils suivent, en affichant leurs noms.
+SELECT ?enseignant ?nomEnseignant ?cours ?nomCours
+WHERE {
+  ?enseignant a ex:Enseignant ;
+              rdfs:label ?nomEnseignant ;
+              ex:enseigneCours ?cours .
+  ?cours rdfs:label ?nomCours .
+}
+```
+
+🧠 **Signification** : Affiche tous les enseignants avec leurs noms ainsi que les cours qu’ils dispensent.
+
+---
