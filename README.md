@@ -70,6 +70,6 @@ WHERE {
             rdfs:label ?nomEtudiant ;
             ex:suitCours ?cours .
   ?cours rdfs:label ?nomCours .
-}
+}```
 
 Cette requête permet de lister tous les étudiants ainsi que les cours qu’ils suivent, en affichant leurs noms.
