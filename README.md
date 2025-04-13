@@ -134,7 +134,7 @@ WHERE {
 ![Exemple](Captures/Vue_des_classes.png).
 
 **Propiétés objet**
-![Exemple](Captures/Propiétés_objet.png).
+![Exemple](Captures/Propriétés_objet.png).
 
 **Individus**
 ![Exemple](Captures/Individus.png).
